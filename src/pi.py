@@ -39,7 +39,7 @@ def spigot(d):
     x = ""
     q,r,t,k,n,l = 1,0,1,1,3,3
     index = 0
-    while len(x) < d:
+    while len(x) < d+1:
         if index == 2:
             x = x + "."
         index += 1
@@ -52,5 +52,30 @@ def spigot(d):
             q,r,t,k,n,l = (
                 q*k,(2*q+r)*l,t*l,k+1,
                 (q*(7*k+2)+r*l)//(t*l),l+2)
+    
     return Decimal(x)
 
+pi_math = pi_math()
+pi_gauss_legendre_float = gauss_legendre_float(0.000000001)
+pi_gauss_legendre_decimal = gauss_legendre_decimal(0.000000001)
+pi_spigot = spigot(100)
+
+print("Math: ", pi_math)
+print("************")
+print("Gauss legendre float: ", pi_gauss_legendre_float)
+print("************")
+print("Gauss legendre decimal: ", pi_gauss_legendre_decimal)
+print("************")
+print("Spigot: ", pi_spigot)
+
+print("---------------------------")
+print("   ")
+print("AREAS (r = 2):")
+print("   ")
+print("Math: ", pi_math*2*2)
+print("************")
+print("Gauss legendre float: ", pi_gauss_legendre_float*2*2)
+print("************")
+print("Gauss legendre decimal: ", pi_gauss_legendre_decimal*2*2)
+print("************")
+print("Spigot: ", pi_spigot*2*2)
