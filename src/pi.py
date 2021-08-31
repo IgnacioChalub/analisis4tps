@@ -28,7 +28,7 @@ def gauss_legendre_decimal(precision):
     while((Decimal(a)-Decimal(b))>precision):
         x = (Decimal(a)+Decimal(b))/2
         y = sqrt(Decimal(a)*Decimal(b))
-        t = Decimal(t)-Decimal(p)*(Decimal(a)-Decimal(x))*(Decimal(a)-Decimal(x))
+        t = Decimal(t)-Decimal(p)(Decimal(a)-Decimal(x))(Decimal(a)-Decimal(x))
         a = x
         b = y
         p = Decimal(2)*Decimal(p)
@@ -61,21 +61,35 @@ pi_gauss_legendre_decimal = gauss_legendre_decimal(0.000000001)
 pi_spigot = spigot(100)
 
 print("Math: ", pi_math)
-print("************")
+print("****")
 print("Gauss legendre float: ", pi_gauss_legendre_float)
-print("************")
+print("****")
 print("Gauss legendre decimal: ", pi_gauss_legendre_decimal)
-print("************")
+print("****")
 print("Spigot: ", pi_spigot)
 
 print("---------------------------")
 print("   ")
 print("AREAS (r = 2):")
 print("   ")
+area_math=  pi_math*2*2
+area_gauss_legendre_float = pi_gauss_legendre_float*2*2
+area_gauss_legendre_decimal= pi_gauss_legendre_decimal*2*2
+area_spigot= pi_spigot*2*2
 print("Math: ", pi_math*2*2)
-print("************")
+print("****")
 print("Gauss legendre float: ", pi_gauss_legendre_float*2*2)
-print("************")
+print("****")
 print("Gauss legendre decimal: ", pi_gauss_legendre_decimal*2*2)
-print("************")
+print("****")
 print("Spigot: ", pi_spigot*2*2)
+ 
+print("---------------------------")
+print("   ")
+print("ERRORES:")
+print("   ")
+print("Gauss legendre float area error: ", abs(area_math - area_gauss_legendre_float )/area_math)
+print("****")
+print("Gauss legendre decimal area error: ", abs(Decimal(area_math) - area_gauss_legendre_decimal )/Decimal(area_math))
+print("****")
+print("Spigot area error: ", abs(Decimal(area_math) - area_spigot)/ Decimal(area_math))
