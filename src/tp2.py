@@ -37,7 +37,7 @@ def euler_modificado(f, x0, y0, h, n):
     return array
 
 
-def f(x, y ):
+def f(x, y):
     return 
 
 print('Euler normal: ')
