@@ -36,15 +36,10 @@ def euler_modificado(f, x0, y0, h, n):
         array[1][i] = y0
     return array
 
-def k(x, y, z, w):
-    return math.exp(x) - 2*g(x,y,z,w) + f(x,y,z,w) + 2*y
 
-def g(x, y, z, w):
-    return w
-
-def f(x,y,z,w):
-    return z
+def f(x, y ):
+    return 
 
 print('Euler normal: ')
-array = euler_mejorado(k, 0, 2, 0.5, 2)
+array = euler_mejorado(f, 0, 2, 0.5, 2)
 print(array)
